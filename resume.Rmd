@@ -1,0 +1,59 @@
+---
+title: "Resume"
+description: |
+  Data Scientist
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Skills
+
+- Machine learning, natural language processing, text mining, data analysis
+- R, Shiny, SQL, GitHub, Docker, Markdown, shell scripting
+
+## Experience
+
+### Data Scientist & Product Manager, quantum simulations* (nüance-R)
+**2020-present**
+
+- Lead development of simulations from design through development to commercialization
+- Dev and built framework for deploy e-simulations through shiny and docker
+
+
+### VP R&D and Innovation, SKEMA Global Lab in Augmented Intelligence (nüance-R)
+**2019-2020**
+
+- Development of SKEMA Quantum Studio platform, an ecosystem for learning and implementing data science
+
+### Data Scientist Consultant, IBM Services
+**2017-2019**
+
+Data science consulting for Retail, Financial and Insurance industries from contracting with customer to final deliverable.
+
+- Built model for estimate Implied Demand
+- Built Demand Forecast models
+- Built NLP classification models
+- Create and automate reports which include data visualization
+
+### Research Professional and Data Scientist, CIRANO
+**2015-2017**
+
+- Development of mondo.international(https://mondo.international), an high tech platform that uses Data Science for International Business, Economics and Finance.
+- Development of Open Science, a new "OS" for Data Science. This platform is dedicated to the International Business field of research with Data Science as the core methodology. We also value reproducible research, and open source developments.
+
+### Engineer Consultant
+**2013**
+
+Technical and functional consultant for implementation of Planisware (OPX2): European leader in project management tools and business.
+
+
+## Education
+
+- HEC Montreal - M.Sc. in International Business, 2016
+- INP/ENSIACET - Engineer degree in Materials Sciences, 2013
+
+## Others
+
+- Avant Garde @ CIRANO - cohort 2020
