@@ -1,7 +1,7 @@
-name: "template"
-title: "My Website"
+name: "tsenegas"
+title: "Thibault Senegas"
 description: |
-  My Website
+  Thibault Senegas personal website
 output_dir: "_site"
 navbar:
   right:

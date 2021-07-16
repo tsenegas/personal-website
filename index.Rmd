@@ -1,15 +1,26 @@
 ---
-title: "My Website"
-description: |
-  Welcome to the website. I hope you enjoy it!
+title: "Thibault Senegas"
+image: "images/senegasThibault.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/tsenegas/"
+  - label: Twitter
+    url: "https://twitter.com/tsenegas"
+  - label: GitHub
+    url: "https://github.com/tsenegas"
+  - label: Email
+    url: "mailto:senegas.th@gmail.com"
+output:
+  postcards::trestles
 site: distill::distill_website
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+My name is Thibault Senegas and I am a data scientist at [nüance-R](https://nuance-r.com) where I work on the development of ed-tech simulations ([quantum simulations*](https://quantumsimulations.app)) and on solutions for the digital transformation of companies.
 
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
+I finished my M.Sc. in International Business from HEC Montreal in 2016 and got a master's engineering degree from INP/ENSIACET (Toulouse, France) with a major in Materials Sciences and a minor in Industrial Systems. I worked at IBM Canada as a data scientist consultant in the Advanced Analytics practice.
 
-```
+I live in Montréal, QC, with my wife and my son.
+
+This website is built with [distill for R Markdown](https://rstudio.github.io/distill/). I deploy my website using [Netlify](https://www.netlify.com/). My blog posts are released under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+ 
 
