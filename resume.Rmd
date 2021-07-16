@@ -21,6 +21,8 @@ knitr::opts_chunk$set(echo = FALSE)
 - Lead development of simulations from design through development to commercialization
 - Dev and built framework for deploy e-simulations through shiny and docker
 
+[quantum simulations*](https://quantumsimulations.app)
+
 
 ### VP R&D and Innovation, SKEMA Global Lab in Augmented Intelligence (nüance-R)
 **2019-2020**
@@ -40,7 +42,7 @@ Data science consulting for Retail, Financial and Insurance industries from cont
 ### Research Professional and Data Scientist, CIRANO
 **2015-2017**
 
-- Development of mondo.international(https://mondo.international), an high tech platform that uses Data Science for International Business, Economics and Finance.
+- Development of [mondo.international](https://mondo.international), an high tech platform that uses Data Science for International Business, Economics and Finance.
 - Development of Open Science, a new "OS" for Data Science. This platform is dedicated to the International Business field of research with Data Science as the core methodology. We also value reproducible research, and open source developments.
 
 ### Engineer Consultant
