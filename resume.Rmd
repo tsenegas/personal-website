@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Skills
 
-- Machine learning, natural language processing, text mining, data analysis
+- Machine learning, natural language processing, text mining, data analysis, Web App dev
 - R, Shiny, SQL, GitHub, Docker, Markdown, shell scripting
 
 ## Experience
