@@ -1,0 +1,79 @@
+---
+title: "Top 10 Big 5 scorers under the lens (part 1)"
+description: |
+  An analysis of the top ten scorers in the big 5. Who is the goat of the scorers?!
+author:
+  - name: Thibault Senegas
+    url: https://tsenegas.netlify.com
+date: 07-21-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_depth : 2
+categories:
+  - sports analytics
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(ggplot2)
+
+```
+
+
+
+## Retrieve data from [FBREF](https://fbref.com/en/)
+
+```{r retrieve data of the TOP10 scorers}
+library(worldfootballR)
+## Lewandowski
+rl9 <- fb_player_match_logs("https://fbref.com/en/players/8d78e732/Robert-Lewandowski",
+                           season_end_year = 2021, stat_type = 'summary')
+## Mbappe
+km10 <- fb_player_match_logs("https://fbref.com/en/players/42fd9c7f/Kylian-Mbappe",
+                            season_end_year = 2021, stat_type = 'summary')
+## Haaland
+eh9 <- fb_player_match_logs("https://fbref.com/en/players/1f44ac21/Erling-Haaland",
+                           season_end_year = 2021, stat_type = 'summary')
+## Messi
+m10 <- fb_player_match_logs("https://fbref.com/en/players/d70ce98e/Lionel-Messi",
+                            season_end_year = 2021, stat_type = 'summary')
+## C. Ronaldo
+cr7 <- fb_player_match_logs("https://fbref.com/en/players/dea698d9/Cristiano-Ronaldo",
+                     season_end_year = 2021, stat_type = 'summary')
+## Kane
+hk9 <- fb_player_match_logs("https://fbref.com/en/players/21a66f6a/Harry-Kane",
+                            season_end_year = 2021, stat_type = 'summary')
+## André Silva
+AS <- fb_player_match_logs("https://fbref.com/en/players/3effaa34/matchlogs/2020-2021/summary/Andre-Silva-Match-Logs",
+                           season_end_year = 2021, stat_type = 'summary')
+AS$Player <- "André Silva"
+## Lukaku
+RLukaku9 <- fb_player_match_logs("https://fbref.com/en/players/5eae500a/Romelu-Lukaku",
+                            season_end_year = 2021, stat_type = 'summary')
+## Moreno
+Moreno <- fb_player_match_logs("https://fbref.com/en/players/81f0781e/Gerard-Moreno",
+                            season_end_year = 2021, stat_type = 'summary')
+## Benzema
+KB9 <- fb_player_match_logs("https://fbref.com/en/players/70d74ece/Karim-Benzema",
+                               season_end_year = 2021, stat_type = 'summary')
+
+# Create an unique df and keep only national league games and game where they played
+df_forwards_national_league <- rbind(cr7, eh9, km10, hk9, KB9, rl9, m10, Moreno, RLukaku9, AS)
+df_forwards_national_league <- df_forwards_national_league %>% filter(Comp == "Bundesliga" | Comp == "La Liga" | Comp == "Ligue 1" | Comp == "Premier League" | Comp == "Serie A") %>% filter(Pos != "On matchday squad, but did not play")
+
+ranking_goals <- df_forwards_national_league %>% group_by(Player) %>% mutate(goals = sum(Gls),
+                                                                             min_played = sum(Min),
+                                                                             xGoals = sum(xG_Expected),
+                                                                             npxGoals = sum(npxG_Expected),
+                                                                             penalty_kicks = sum(PK)) 
+ranking_goals <- unique(ranking_goals[c(1,40,41,42,43,44)])
+
+```
+
+
+
+
