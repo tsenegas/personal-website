@@ -8,9 +8,11 @@ author:
 date: 07-21-2021
 output:
   distill::distill_article:
+    code_folding: true
     self_contained: false
     toc: true
     toc_depth : 2
+creative_commons: CC BY    
 categories:
   - sports analytics
 ---
@@ -20,6 +22,8 @@ categories:
 knitr::opts_chunk$set(echo = FALSE)
 library(dplyr)
 library(ggplot2)
+library(gridExtra)
+library(ggpubr)
 
 ```
 
@@ -27,7 +31,7 @@ library(ggplot2)
 
 ## Retrieve data from [FBREF](https://fbref.com/en/)
 
-```{r retrieve data of the TOP10 scorers}
+```{r retrieve data of the TOP10 scorers, message=FALSE}
 library(worldfootballR)
 ## Lewandowski
 rl9 <- fb_player_match_logs("https://fbref.com/en/players/8d78e732/Robert-Lewandowski",
@@ -61,7 +65,7 @@ Moreno <- fb_player_match_logs("https://fbref.com/en/players/81f0781e/Gerard-Mor
 KB9 <- fb_player_match_logs("https://fbref.com/en/players/70d74ece/Karim-Benzema",
                                season_end_year = 2021, stat_type = 'summary')
 
-# Create an unique df and keep only national league games and game where they played
+# Create an unique df and keep only national league games
 df_forwards_national_league <- rbind(cr7, eh9, km10, hk9, KB9, rl9, m10, Moreno, RLukaku9, AS)
 df_forwards_national_league <- df_forwards_national_league %>% filter(Comp == "Bundesliga" | Comp == "La Liga" | Comp == "Ligue 1" | Comp == "Premier League" | Comp == "Serie A") %>% filter(Pos != "On matchday squad, but did not play")
 
@@ -76,4 +80,92 @@ ranking_goals <- unique(ranking_goals[c(1,40,41,42,43,44)])
 
 
 
+## Leaderboard
 
+```{r, layout="l-page"}
+ranking_w_penalties <- ggplot2::ggplot(ranking_goals,
+                                       aes(x=reorder(Player, goals),
+                                           y=goals,
+                                           color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=goals), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "including penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+ranking_wo_penalties <- ggplot2::ggplot(ranking_goals,
+                                        aes(x=reorder(Player, (goals-penalty_kicks)),
+                                            y=(goals-penalty_kicks),
+                                            color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=(goals-penalty_kicks)), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "without penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+grid.arrange(
+  ranking_w_penalties,
+  ranking_wo_penalties, 
+  nrow = 1,
+  top = "Ranking of the top scorers in the big 5",
+  bottom = text_grob(
+  "Graphic: Thibault Senegas \n Data: fbref.com",
+  size = 8,
+  hjust = 1,
+  x = 1
+  )
+)
+```
+
+## Leaderboard xG
+
+```{r, layout="l-page"}
+ranking_xG_w_penalties <- ggplot2::ggplot(ranking_goals,
+                                       aes(x=reorder(Player, xGoals),
+                                           y=xGoals,
+                                           color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=xGoals), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "including penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+ranking_xG_wo_penalties <- ggplot2::ggplot(ranking_goals,
+                                        aes(x=reorder(Player, npxGoals),
+                                            y=npxGoals,
+                                            color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=npxGoals), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "without penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+grid.arrange(
+  ranking_xG_w_penalties,
+  ranking_xG_wo_penalties, 
+  nrow = 1,
+  top = "Ranking of the top scorers in the big 5",
+  bottom = text_grob(
+  "Graphic: Thibault Senegas \n Data: fbref.com",
+  size = 8,
+  hjust = 1,
+  x = 1
+  )
+)
+```
