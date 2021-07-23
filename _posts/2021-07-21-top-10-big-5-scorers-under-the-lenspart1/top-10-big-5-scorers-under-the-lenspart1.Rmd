@@ -82,6 +82,8 @@ ranking_goals <- unique(ranking_goals[c(1,40,41,42,43,44)])
 
 ## Leaderboard
 
+### Overall
+
 ```{r, layout="l-page"}
 ranking_w_penalties <- ggplot2::ggplot(ranking_goals,
                                        aes(x=reorder(Player, goals),
@@ -125,7 +127,54 @@ grid.arrange(
 )
 ```
 
+### Per 90 minutes
+```{r, layout="l-page"}
+ranking_w_penalties_90m <- ggplot2::ggplot(ranking_goals,
+                                       aes(x=reorder(Player, goals/min_played),
+                                           y=goals/min_played,
+                                           color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=format(round((goals/min_played)*90,2),nsmall = 2)), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "including penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+ranking_wo_penalties_90m <- ggplot2::ggplot(ranking_goals,
+                                        aes(x=reorder(Player, (goals-penalty_kicks)/min_played),
+                                            y=(goals-penalty_kicks)/min_played,
+                                            color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=format(round(((goals-penalty_kicks)/min_played)*90,2),nsmall = 2)), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "without penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+grid.arrange(
+  ranking_w_penalties_90m,
+  ranking_wo_penalties_90m, 
+  nrow = 1,
+  top = "Ranking of the top scorers in the big 5",
+  bottom = text_grob(
+  "Graphic: Thibault Senegas \n Data: fbref.com",
+  size = 8,
+  hjust = 1,
+  x = 1
+  )
+)
+```
+
+
 ## Leaderboard xG
+
+### Overall
 
 ```{r, layout="l-page"}
 ranking_xG_w_penalties <- ggplot2::ggplot(ranking_goals,
@@ -159,6 +208,95 @@ ranking_xG_wo_penalties <- ggplot2::ggplot(ranking_goals,
 grid.arrange(
   ranking_xG_w_penalties,
   ranking_xG_wo_penalties, 
+  nrow = 1,
+  top = "Ranking of the top scorers in the big 5",
+  bottom = text_grob(
+  "Graphic: Thibault Senegas \n Data: fbref.com",
+  size = 8,
+  hjust = 1,
+  x = 1
+  )
+)
+```
+
+### Per 90 minutes
+```{r, layout="l-page"}
+ranking_xG_w_penalties_90m <- ggplot2::ggplot(ranking_goals,
+                                       aes(x=reorder(Player, (xGoals/min_played)*90),
+                                           y=(xGoals/min_played)*90,
+                                           color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=format(round((xGoals/min_played)*90,2),nsmall = 2)), hjust=1.1, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "including penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+ranking_xG_wo_penalties_90m <- ggplot2::ggplot(ranking_goals,
+                                        aes(x=reorder(Player, (npxGoals/min_played)*90),
+                                            y=(npxGoals/min_played)*90,
+                                            color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=format(round((npxGoals/min_played)*90,2),nsmall = 2)), hjust=1.1, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "without penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+grid.arrange(
+  ranking_xG_w_penalties_90m,
+  ranking_xG_wo_penalties_90m, 
+  nrow = 1,
+  top = "Ranking of the top scorers in the big 5",
+  bottom = text_grob(
+  "Graphic: Thibault Senegas \n Data: fbref.com",
+  size = 8,
+  hjust = 1,
+  x = 1
+  )
+)
+```
+
+## Goals vers xGoals
+
+```{r, layout="l-page"}
+ranking_GvsxG_w_penalties <- ggplot2::ggplot(ranking_goals,
+                                       aes(x=reorder(Player, goals/xGoals),
+                                           y=goals/xGoals,
+                                           color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=format(round((goals/xGoals),2),nsmall = 2)), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "including penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+ranking_GvsnpxG_wo_penalties <- ggplot2::ggplot(ranking_goals,
+                                        aes(x=reorder(Player, (goals-penalty_kicks)/npxGoals),
+                                            y=(goals-penalty_kicks)/npxGoals,
+                                            color=Player)) +
+  geom_bar(stat="identity", fill ="white") +
+  geom_text(aes(label=format(round((goals-penalty_kicks)/npxGoals,2),nsmall = 2)), hjust=1.5, color="black", size=3.5) +
+  ggtitle("") +
+  xlab("") +
+  ylab("") +
+  coord_flip() +
+  labs(subtitle = "without penalties") +
+  theme_minimal() +
+  theme(legend.position="none")
+
+grid.arrange(
+  ranking_GvsxG_w_penalties,
+  ranking_GvsnpxG_wo_penalties, 
   nrow = 1,
   top = "Ranking of the top scorers in the big 5",
   bottom = text_grob(
