@@ -2,11 +2,23 @@ name: "tsenegas"
 title: "Thibault Senegas"
 description: |
   Thibault Senegas personal website
+base_url: https://tsenegas.netlify.com
 output_dir: "_site"
 navbar:
+  search: TRUE
   right:
     - text: "Home"
       href: index.html
+    - text: "Blog"
+      href: blog.html
     - text: "Resume"
       href: resume.html
+    - icon: fab fa-github
+      href: https://github.com/tsenegas   
+    - icon: fab fa-twitter
+      href: https://twitter.com/tsenegas
+    - icon: fab fa-linkedin-in
+      href: https://www.linkedin.com/in/tsenegas/
+    - icon: fa fa-rss
+      href: untidily.xml  
 output: distill::distill_article

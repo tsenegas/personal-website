@@ -1,7 +1,7 @@
 ---
 title: "Top 10 Big 5 scorers under the lens (part 1)"
 description: |
-  An analysis of the top ten scorers in the big 5. Who is the goat of the scorers?!
+  An analysis of the top ten scorers in the big 5. Who is the best in the 2020-2021 season?
 author:
   - name: Thibault Senegas
     url: https://tsenegas.netlify.com
@@ -15,6 +15,7 @@ output:
 creative_commons: CC BY    
 categories:
   - sports analytics
+draft: TRUE  
 ---
 
 
@@ -27,9 +28,28 @@ library(ggpubr)
 
 ```
 
+The top scorer in the 2020-2021 season is Robert Lewandowski with 41 goals for F.C. Bayern Munich in the Bundesliga. But is he the most effective if we relate his number of goals in playing time and in expecting goals?
 
+Using data from fbref.com for the 2020-2021 season, we'll compare the efficiency of the top 10 scorers in the 2020-2021 season in the big 5 national leagues. In this first analysis, we will only use data referring to the number of goals scored (including penalties or not), playing time, expecting goals (with and without penalties).
 
-## Retrieve data from [FBREF](https://fbref.com/en/)
+The list of the top 10 scorers in the National League for the 2020-2021 season in the Big 5 is as follows:
+
+1. Robert Lewandowski (Bayern Munich - Bundesliga): 41 goals
+2. Lionel Messi (Barcelona - La Liga): 30 goals
+3. Cristiano Ronaldo (Juventus - Serie A): 29 goals
+4. André Silva (Eint Frankfurt - Bundesliga): 28 goals
+5. Kylian Mbappé (Paris S-G - Ligue 1): 27 goals
+6. Erling Haaland (Dortmund - Bundesliga): 27 goals
+7. Romelu Lukaku (Inter - Serie A): 24 goals
+8. Karim Benzema (Real Madrid - La Liga): 23 goals
+9. Harry Kane (Tottenham - Premier League): 23 goals
+10.  Gerard Moreno (Villarreal - La Liga): 23 goals
+
+Robert Lewandowski outrageously dominates this ranking with 41 goals, but let's see if this is still the case when we push the analysis. 
+
+## Retrieve data from [FBREF](https://fbref.com/)
+
+The first step is to collect data from the 2020-2021 season for the ten strikers. We retrieve the data from [fbref](https://fbref.com) using the worldfootballR^[https://jaseziv.github.io/worldfootballR/] package.
 
 ```{r retrieve data of the TOP10 scorers, message=FALSE}
 library(worldfootballR)
@@ -78,8 +98,6 @@ ranking_goals <- unique(ranking_goals[c(1,40,41,42,43,44)])
 
 ```
 
-
-
 ## Leaderboard
 
 ### Overall
@@ -119,7 +137,7 @@ grid.arrange(
   nrow = 1,
   top = "Ranking of the top scorers in the big 5",
   bottom = text_grob(
-  "Graphic: Thibault Senegas \n Data: fbref.com",
+  "Graphic: Thibault Senegas \n Data: fbref.com & worldfootballR",
   size = 8,
   hjust = 1,
   x = 1
@@ -163,7 +181,7 @@ grid.arrange(
   nrow = 1,
   top = "Ranking of the top scorers in the big 5",
   bottom = text_grob(
-  "Graphic: Thibault Senegas \n Data: fbref.com",
+  "Graphic: Thibault Senegas \n Data: fbref.com & worldfootballR",
   size = 8,
   hjust = 1,
   x = 1
@@ -211,7 +229,7 @@ grid.arrange(
   nrow = 1,
   top = "Ranking of the top scorers in the big 5",
   bottom = text_grob(
-  "Graphic: Thibault Senegas \n Data: fbref.com",
+  "Graphic: Thibault Senegas \n Data: fbref.com & worldfootballR",
   size = 8,
   hjust = 1,
   x = 1
@@ -255,7 +273,7 @@ grid.arrange(
   nrow = 1,
   top = "Ranking of the top scorers in the big 5",
   bottom = text_grob(
-  "Graphic: Thibault Senegas \n Data: fbref.com",
+  "Graphic: Thibault Senegas \n Data: fbref.com & worldfootballR",
   size = 8,
   hjust = 1,
   x = 1
@@ -300,7 +318,7 @@ grid.arrange(
   nrow = 1,
   top = "Ranking of the top scorers in the big 5",
   bottom = text_grob(
-  "Graphic: Thibault Senegas \n Data: fbref.com",
+  "Graphic: Thibault Senegas \n Data: fbref.com & worldfootballR",
   size = 8,
   hjust = 1,
   x = 1
