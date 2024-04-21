@@ -3,7 +3,7 @@ title: "Thibault Senegas"
 description: |
   Thibault Senegas personal website
 base_url: https://tsenegas.netlify.com
-output_dir: "."
+output_dir: "docs"
 navbar:
   search: TRUE
   right:
