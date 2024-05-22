@@ -15,12 +15,11 @@ output:
 site: distill::distill_website
 ---
 
-My name is Thibault Senegas and I am a data scientist at [nüance-R](https://nuance-r.com) where I work on the development of ed-tech simulations ([quantum simulations*](https://quantumsimulations.app)) and on solutions for the digital transformation of companies.
+I'm Thibault Senegas, a self-taught programmer turned R and Shiny expert. By day, I'm a Product Owner and Data Scientist at [quantum simulations*](https://quantumsimulations.app) where I lead the development of digital twins for companies, sports teams and geographical areas. 
 
-I finished my M.Sc. in International Business from HEC Montreal in 2016 and got a master's engineering degree from INP/ENSIACET (Toulouse, France) with a major in Materials Sciences and a minor in Industrial Systems. I worked at IBM Canada as a data scientist consultant in the Advanced Analytics practice.
+I hold an M.Sc. in International Business from HEC Montreal (2016) and a Master's degree in Engineering from INP/ENSIACET (Toulouse, France), where I majored in Materials Sciences and minored in Industrial Systems. Prior to my current role, I worked as a Data Scientist in IBM's Advanced Analytics practice.
 
-I live in Montréal, QC, with my wife and my son.
+I reside in Montréal, QC, with my wife and two sons.
 
-This website is built with [distill for R Markdown](https://rstudio.github.io/distill/). I deploy my website using [Netlify](https://www.netlify.com/). My blog posts are released under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
  
 
