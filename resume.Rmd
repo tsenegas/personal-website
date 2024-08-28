@@ -12,18 +12,31 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+[My Resume](resume/CV_ThS_2024.pdf)
+
 ## Skills
 
 - Machine learning, natural language processing, text mining, data analysis, Web App dev
-- R, Shiny, SQL, GitHub, Docker, Markdown, shell scripting
+- R, R/Shiny, Git, SQL, API, Docker, Generative AI, Shiny Proxy
 
 ## Experience
 
-### Data Scientist & Product Manager, quantum simulations* (nüance-R)
+### Lead Data Scientist & Chief Product Owner, quantum simulations* (nüance-R)
 **2020-present**
 
-- Lead development of simulations from design through development to commercialization
-- Dev and built framework for deploy e-simulations through shiny and docker
+As the Chief Product Owner and Lead Data Scientist, I spearhead a team of product owners and data scientists dedicated to pioneering digital twin technologies. We are shaping the future of ERPs with cutting-edge data and AI models.
+
+Our innovative, real-time data-driven solutions empower organizations to transition into Industry 5.0, becoming truly data-centric. We revolutionize strategy and decision-making processes across various domains, from sales prospecting to production monitoring and raw materials supply management.
+
+- Leadership: Leading a dynamic team to develop state-of-the-art digital twin products.
+
+- Innovation: Implementing advanced AI solutions, including Machine Learning, Forecasting, and Generative AI models.
+
+- Integration: Delivering multi-agent and multi-modal solutions that integrate seamlessly with existing systems.
+
+- Impact: Driving significant improvements in organizational efficiency and decision-making capabilities.
+
+Our mission is to redefine the strategic landscape for organizations by leveraging the power of data and AI to foster growth and sustainability.
 
 [quantum simulations*](https://quantumsimulations.app)
 
@@ -31,23 +44,44 @@ knitr::opts_chunk$set(echo = FALSE)
 ### VP R&D and Innovation, SKEMA Global Lab in Augmented Intelligence (nüance-R)
 **2019-2020**
 
-- Development of SKEMA Quantum Studio platform, an ecosystem for learning and implementing data science
+The SKEMA Global Lab in Augmented Intelligence has been built within SKEMA Business School around the nüance-R Data Science and AI platform. It served as a proof of concept for the school's 2020-2025 strategic plan. The objective was to help SKEMA Business School to become the school of the Avant-Garde through the use of Data Science and AI.
+
+This initiative has enabled the development of various academic programs including the signature Data Science curriculum for the Grande Ecole Program of SKEMA Business School.
+
+Thibault was in charge of the development of the SKEMA Quantum Studio platform for the SKEMA Augmented Intelligence laboratory in Canada. He also supported the digital transformation of the school's various departments.
+
+ - Creation of online courses on data science with R, from data import to modeling, data wrangling and GIS.
+ - Teaching Data Science bootcamp for bachelor's/master's students.
 
 ### Data Scientist Consultant, IBM Services
 **2017-2019**
+
+Data Scientist at IBM Services on Advanced Analytics practice.
 
 Data science consulting for Retail, Financial and Insurance industries from contracting with customer to final deliverable.
 
 - Built model for estimate Implied Demand
 - Built Demand Forecast models
 - Built NLP classification models
-- Create and automate reports which include data visualization
+- Create and automate reports which include data visualization 
+
+Principal technologies: R, SQL
+Techniques: Time series, Machine Learning
+
+Recognition: Service Excellency Award
 
 ### Research Professional and Data Scientist, CIRANO
 **2015-2017**
 
-- Development of [mondo.international](https://mondo.international), an high tech platform that uses Data Science for International Business, Economics and Finance.
-- Development of Open Science, a new "OS" for Data Science. This platform is dedicated to the International Business field of research with Data Science as the core methodology. We also value reproducible research, and open source developments.
+Development of Mondo. An high tech platform that uses Data Science for International Business, Economics and Finance.
+
+Development of Open Science. A NEW "OS" FOR DATA SCIENCE. This platform is dedicated to the International Business field of research with Data Science as the core methodology. We also value reproducible research, and open source developments.
+
+- Data Mining
+- Data Analysis
+- R software and packages for Data Science
+- Machine Learning
+- nüance-R Platform
 
 ### Engineer Consultant
 **2013**
@@ -63,3 +97,4 @@ Technical and functional consultant for implementation of Planisware (OPX2): Eur
 ## Others
 
 - Avant Garde @ CIRANO - cohort 2020
+- Soccer Coach - CS Boucaniers / U9 & U10

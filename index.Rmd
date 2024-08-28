@@ -15,11 +15,13 @@ output:
 site: distill::distill_website
 ---
 
-I'm Thibault Senegas, a self-taught programmer turned R and Shiny expert. By day, I'm a Product Owner and Data Scientist at [quantum simulations*](https://quantumsimulations.app) where I lead the development of digital twins for companies, sports teams and geographical areas. 
+I'm Thibault Senegas, a self-taught programmer and expert in R and Shiny. As a Lead Data Scientist and Chief Product Owner at [quantum simulations*](https://quantumsimulations.app), I lead the creation of digital twins for companies, sports teams, and geographical regions. My focus is on merging cutting-edge data science with real-world applications.
 
-I hold an M.Sc. in International Business from HEC Montreal (2016) and a Master's degree in Engineering from INP/ENSIACET (Toulouse, France), where I majored in Materials Sciences and minored in Industrial Systems. Prior to my current role, I worked as a Data Scientist in IBM's Advanced Analytics practice.
+I hold an M.Sc. in International Business from HEC Montréal and a Master's degree in Engineering from INP/ENSIACET in Toulouse, France. Before joining quantum simulations*, I honed my skills as a Data Scientist at IBM in their Advanced Analytics practice.
 
-I reside in Montréal, QC, with my wife and two sons.
+This website is a personal project where I explore how advanced data science techniques can be applied to sports analytics (especially in soccer). By leveraging my professional expertise, I seek to demonstrate how these methods can enhance performance metrics, strategy, and decision-making in sports.
+
+I currently reside in Montréal, QC, with my wife and two sons.
 
  
 
